@@ -6,8 +6,10 @@
         public string AppointmentOwner { get; private set; } = string.Empty;
         public string Title { get; private set; } = string.Empty;
         public string Description { get;  private set; } = string.Empty;
+        public int RoomId { get; private set; }
         public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
+        
 
         public int PatientId { get; private set; }
         public Patient Patient { get; private set; } = null!;
@@ -17,7 +19,7 @@
         
         protected Appointment() { }
 
-        public Appointment(string appointmentOwner,string title, string description, int patientId, int doctorId, DateTime startDate, DateTime endDate)
+        public Appointment(string appointmentOwner,string title, string description, int patientId, int doctorId, int roomId, DateTime startDate, DateTime endDate)
         {
             if (string.IsNullOrWhiteSpace(appointmentOwner))
             {
@@ -39,6 +41,10 @@
             {
                 throw new ArgumentOutOfRangeException("Doctor invalido", nameof(doctorId));
             }
+            if(roomId <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(roomId), "Id de la habitacion invalido");
+            }
             if(startDate >= endDate)
             {
                 throw new ArgumentOutOfRangeException("La fecha de inicio es invalida", nameof(startDate));
@@ -51,6 +57,7 @@
             DoctorId = doctorId;
             StartDate = startDate;
             EndDate = endDate;
+            RoomId = roomId;
         }
     }
 }
