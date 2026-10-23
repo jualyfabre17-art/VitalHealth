@@ -14,11 +14,11 @@ namespace VitalHealthAPI.Service
             DbContext = dbContext;
         }
 
-        public async Task<bool> AvailableAppointment( int roomId, DateTime startDateProposed, DateTime endDateProposed)
+        public async Task<bool> AvailableAppointment( int doctorId, DateTime startDateProposed, DateTime endDateProposed)
         {
             bool isNotAvailable = await DbContext.Appointments
                 .AsNoTracking()
-                .Where(r => r.RoomId == roomId)
+                .Where(r => r.DoctorId == doctorId)
                 .AnyAsync(r => r.StartDate < endDateProposed && r.EndDate > startDateProposed);
 
             return !isNotAvailable;
