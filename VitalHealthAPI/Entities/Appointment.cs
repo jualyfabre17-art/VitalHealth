@@ -59,8 +59,8 @@
             EndDate = endDate;
             RoomId = roomId;
         }
-
         public abstract TimeSpan MinimumDuration();
-        public abstract bool ConfirmationRequeriments();
+        public abstract bool ConfirmationPhysicalRequeriments();
+        //final
     }
 }
