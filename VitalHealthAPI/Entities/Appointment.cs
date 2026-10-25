@@ -1,6 +1,6 @@
 ﻿namespace VitalHealthAPI.Entities
 {
-    public class Appointment
+    public abstract class Appointment
     {
         public int Id { get; private set; }
         public string AppointmentOwner { get; private set; } = string.Empty;
@@ -59,5 +59,8 @@
             EndDate = endDate;
             RoomId = roomId;
         }
+        public abstract TimeSpan MinimumDuration();
+        public abstract bool ConfirmationPhysicalRequeriments();
+        //final
     }
 }
