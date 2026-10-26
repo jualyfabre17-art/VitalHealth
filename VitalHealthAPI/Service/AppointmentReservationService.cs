@@ -2,16 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using VitalHealthAPI.migrations;
 using VitalHealthAPI.Entities;
+using VitalHealthAPI.Interfaces;
 
 namespace VitalHealthAPI.Service
 {
     public class AppointmentReservationService
     {
         private readonly AppointmentDbContext DbContext;
+        private readonly INotification _notifyUser;
 
-        public AppointmentReservationService(AppointmentDbContext dbContext)
+        public AppointmentReservationService(AppointmentDbContext dbContext, INotification notifyUser)
         {
             DbContext = dbContext;
+            _notifyUser = notifyUser;
         }
 
         public async Task<bool> AvailableAppointment( int doctorId, DateTime startDateProposed, DateTime endDateProposed)
@@ -22,6 +25,12 @@ namespace VitalHealthAPI.Service
                 .AnyAsync(r => r.StartDate < endDateProposed && r.EndDate > startDateProposed);
 
             return !isNotAvailable;
+        }
+
+        public void PatientNotification (string message)
+        {
+            Task notification = _notifyUser.SendNotificationAsync( message);
+            Console.WriteLine(notification);
         }
     }
 }
