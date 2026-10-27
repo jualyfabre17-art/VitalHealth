@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 
-namespace VitalHealthAPI.Entities
+namespace VitalHealth.Domain.Entities
 {
     public class Patient
     {

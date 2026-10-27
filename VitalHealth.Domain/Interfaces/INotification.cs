@@ -1,4 +1,4 @@
-﻿namespace VitalHealthAPI.Interfaces
+﻿namespace VitalHealth.Domain.Interfaces
 {
     public interface INotification
     {

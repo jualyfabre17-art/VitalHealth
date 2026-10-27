@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using VitalHealthAPI.Entities;
-namespace VitalHealthAPI.migrations
+using VitalHealth.Domain.Entities;
+
+namespace VitalHealth.Infrastructure.Persistence.migrations
 {
     public class AppointmentDbContext : DbContext
     {

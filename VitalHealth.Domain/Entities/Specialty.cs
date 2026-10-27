@@ -1,4 +1,4 @@
-﻿namespace VitalHealthAPI.Entities
+﻿namespace VitalHealth.Domain.Entities
 {
     public class Specialty
     {
