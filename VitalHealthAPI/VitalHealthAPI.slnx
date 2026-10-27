@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="../VitalHealth.Application/VitalHealth.Application.csproj" Id="be2d1b6b-6ab3-4e85-add6-73ecf0e8e62f" />
+  <Project Path="../VitalHealth.Domain/VitalHealth.Domain.csproj" Id="41c9807d-082e-4b0c-850a-8d7e116607e3" />
+  <Project Path="../VitalHealth.Infrastructure/VitalHealth.Infrastructure.csproj" Id="8b906690-86f7-431d-8949-992a351ac0b6" />
   <Project Path="VitalHealthAPI.csproj" />
 </Solution>
