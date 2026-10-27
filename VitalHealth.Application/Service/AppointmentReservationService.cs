@@ -1,10 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using Microsoft.EntityFrameworkCore;
-using VitalHealthAPI.migrations;
-using VitalHealthAPI.Entities;
-using VitalHealthAPI.Interfaces;
-
-namespace VitalHealthAPI.Service
+﻿using Microsoft.EntityFrameworkCore;
+using VitalHealth.Domain.Interfaces;
+namespace VitalHealth.Application.Service
 {
     public class AppointmentReservationService
     {

@@ -1,6 +1,6 @@
-﻿using VitalHealthAPI.Interfaces;
+﻿using VitalHealth.Domain.Interfaces;
 
-namespace VitalHealthAPI.Service
+namespace VitalHealth.Infrastructure
 {
     public class SmsNotification : INotification
     {

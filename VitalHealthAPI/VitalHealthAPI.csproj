@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.13" />
+    <ProjectReference Include="..\VitalHealth.Application\VitalHealth.Application.csproj" />
+    <ProjectReference Include="..\VitalHealth.Infrastructure\VitalHealth.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
