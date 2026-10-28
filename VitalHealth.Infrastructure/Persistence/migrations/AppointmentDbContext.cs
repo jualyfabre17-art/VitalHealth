@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using VitalHealth.Application;
 using VitalHealth.Domain.Entities;
 
 namespace VitalHealth.Infrastructure.Persistence.migrations
 {
-    public class AppointmentDbContext : DbContext
+    public class AppointmentDbContext : DbContext , IApplicationDbContext
     {
         public DbSet<Patient> Patients => Set<Patient>();
         public DbSet<Doctor> Doctors => Set<Doctor>();
