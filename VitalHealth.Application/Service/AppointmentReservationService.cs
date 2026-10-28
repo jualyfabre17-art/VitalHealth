@@ -4,10 +4,10 @@ namespace VitalHealth.Application.Service
 {
     public class AppointmentReservationService
     {
-        private readonly AppointmentDbContext DbContext;
+        private readonly IApplicationDbContext DbContext;
         private readonly INotification _notifyUser;
 
-        public AppointmentReservationService(AppointmentDbContext dbContext, INotification notifyUser)
+        public AppointmentReservationService(IApplicationDbContext dbContext, INotification notifyUser)
         {
             DbContext = dbContext;
             _notifyUser = notifyUser;
